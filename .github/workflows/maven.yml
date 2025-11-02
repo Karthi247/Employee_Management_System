@@ -41,7 +41,8 @@ jobs:
 
     - name: Deploy to Railway
       if: github.ref == 'refs/heads/main'
+      env:
+        RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
       run: |
         npm install -g @railway/cli
-        railway login --token ${{ secrets.RAILWAY_TOKEN }}
         railway up --service employee-app --detach

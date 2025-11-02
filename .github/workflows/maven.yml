@@ -31,10 +31,10 @@ jobs:
       uses: docker/login-action@v2
       with:
         username: karthi247
-        password: Karthi@2470
+        password: Goddy@2470
     
     - name: Push Docker Image
       if: github.ref == 'refs/heads/main'
       run: |
         docker tag employee-app karthi247/employee-app:latest
-        docker push Karthi@2470/employee-app:latest
+        docker push Goddy@2470/employee-app:latest

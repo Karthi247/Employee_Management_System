@@ -37,4 +37,4 @@ jobs:
       if: github.ref == 'refs/heads/main'
       run: |
         docker tag employee-app karthi247/employee-app:latest
-        docker push Goddy@2470/employee-app:latest
+        docker push karthi247/employee-app:latest

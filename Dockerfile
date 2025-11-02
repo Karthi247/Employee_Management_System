@@ -1,9 +1,11 @@
-FROM openjdk:21-slim
+FROM eclipse-temurin:21-jdk
 
 WORKDIR /app
 
-COPY target/employee-management-system-0.0.1-SNAPSHOT.war app.war
+COPY target/*.war app.war
 
-EXPOSE 8000
+EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "app.war"]
+ENV PORT=8080
+
+ENTRYPOINT ["java", "-jar", "app.war", "--server.port=${PORT}"]
